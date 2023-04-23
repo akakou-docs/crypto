@@ -10,4 +10,4 @@ permalink: /docs/2_enc-dec/
 暗号は、特定の人物に平文（秘密）するための技術  
 →第三者が見ても、特別な知識なしでは読めないように変換する
 
-<embed src="../img/the.pdf" height="700" type="application/pdf">
+<embed src="../img/cipher.pdf" height="700" type="application/pdf">
