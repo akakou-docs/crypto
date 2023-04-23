@@ -2,7 +2,6 @@
 layout: page
 title: 公開鍵暗号
 nav_order: 4
-parent: 暗号
 permalink: /docs/4_pubkey
 ---
 
@@ -62,7 +61,7 @@ permalink: /docs/4_pubkey
 
 <img src="../../img/pubkey2.png" />
 
-### 公開鍵暗号の例
+## 公開鍵暗号の例
 
 RSA暗号
 - 素因数分解の困難性を安全性の根拠とした公開鍵暗号
