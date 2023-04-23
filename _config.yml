@@ -1,8 +1,8 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: 犬でもわかる暗号技術入門
+description: 暗号とは何か犬でもわかるように説明します！
 remote_theme: just-the-docs
 
-url: https://just-the-docs.github.io
+url: https://github.com/akakou-docs/crypto
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
