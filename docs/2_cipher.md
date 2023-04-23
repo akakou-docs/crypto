@@ -10,10 +10,9 @@ permalink: /docs/2_cipher/
 暗号は、特定の人物に平文（秘密）するための技術  
 →第三者が見ても、特別な知識なしでは読めないように変換する
 
-<embed 
+<iframe 
     src="../../img/cipher.pdf"
-    type="application/pdf"
-    frameBorder="0"
-    scrolling="auto"
     height="100%"
-    width="100%" />
+    width="100%" 
+    frameBorder="0"
+    scrolling="auto" />
