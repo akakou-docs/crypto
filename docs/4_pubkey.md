@@ -83,8 +83,8 @@ ElGamal暗号
 
 ### 1. 鍵ペアの生成
 
-<iframe src="../demo/rsa_keygen.html" height="500px" width="100%" scrolling="no" frameborder="0"></iframe>
+<iframe src="../demo/rsa_keygen.html" height="350px" width="100%" scrolling="no" frameborder="0"></iframe>
 
 ### 2. 暗号化
 
-<iframe src="../demo/rsa_enc.html" height="500px" width="100%" scrolling="no" frameborder="0"></iframe>
+<iframe src="../demo/rsa_enc.html" height="350px" width="100%" scrolling="no" frameborder="0"></iframe>
