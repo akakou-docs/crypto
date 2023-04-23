@@ -37,15 +37,15 @@ permalink: /docs/2_cipher/
 - **共通鍵暗号方式:** 暗号化と復号で **同じ** 鍵を使う暗号方式
 - **公開鍵暗号方式:** 暗号化と復号で **別の鍵** を使う暗号方式
 
-# 共通鍵暗号方式
+## 共通鍵暗号方式
 
 共通鍵暗号方式とは、暗号化と復号で同じ鍵を利用する暗号方式である。  
 →送信者と受信者が事前に共通鍵（秘密鍵）を共有する必要がある。
 
 <img src="../../img/com-cipher.png" />
 
-## 共通鍵暗号の例
-### シーザー暗号（脆弱）
+### 共通鍵暗号の例
+#### シーザー暗号（脆弱）
 
 シーザー暗号とは、平文をアルファベット順に共通鍵分ずらす暗号方式である。  
 [カエサル（Caesar）](https://ja.wikipedia.org/wiki/%E3%82%AC%E3%82%A4%E3%82%A6%E3%82%B9%E3%83%BB%E3%83%A6%E3%83%AA%E3%82%A6%E3%82%B9%E3%83%BB%E3%82%AB%E3%82%A8%E3%82%B5%E3%83%AB)[^brutasu]という偉人がつかったことで有名である。
@@ -57,14 +57,14 @@ permalink: /docs/2_cipher/
 
 <img src="../../img/caesar.png" />
 
-### AES: Advanced Encryption Standard
+#### AES: Advanced Encryption Standard
 
 AESとは、現在最も利用される共通鍵暗号方式である。  
 アメリカ国立標準技術研究所（NIST）が標準化した。
 
 **とりあえず何か共通鍵暗号を利用したい場合は、AESを使うといい。**
 
-#### AESのデモ
+##### AESのデモ
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
