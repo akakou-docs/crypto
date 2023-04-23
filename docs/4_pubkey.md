@@ -92,3 +92,15 @@ ElGamal暗号
 ### 3. 復号
 
 <iframe src="../demo/rsa_dec.html" height="350px" width="100%" scrolling="no" frameborder="0"></iframe>
+    
+    
+
+## 共通鍵暗号の特徴
+### メリット
+- 必要な（秘密）鍵の数が少ない  
+  →n人が相互に暗号通信するのに、必要な共通鍵数はn
+- 配送する公開鍵は漏洩しても良い
+
+### デメリット
+- 処理が低速
+
