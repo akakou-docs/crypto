@@ -88,3 +88,7 @@ ElGamal暗号
 ### 2. 暗号化
 
 <iframe src="../demo/rsa_enc.html" height="350px" width="100%" scrolling="no" frameborder="0"></iframe>
+
+### 3. 復号
+
+<iframe src="../demo/rsa_dec.html" height="350px" width="100%" scrolling="no" frameborder="0"></iframe>

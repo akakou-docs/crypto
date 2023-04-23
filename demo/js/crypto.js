@@ -71,3 +71,22 @@ const encrypt = async (message, pub) => {
     return encodedCipher
 }
 
+
+
+const decrypt = async (cipher, priv) => {
+    const derString = window.atob(cipher)
+    const binCipher = str2ab(derString)
+
+    const plain = await window.crypto.subtle.decrypt(
+        {
+            name: "RSA-OAEP",
+        },
+        priv,
+        binCipher
+    )
+
+    let decoder = new TextDecoder()
+    encodedPlain = decoder.decode(plain)
+
+    return encodedPlain
+}
