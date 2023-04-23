@@ -5,6 +5,9 @@
 <script type="text/javascript" src="./js/crypto.js"></script>
 
 
+<button onclick="gen_keys()">鍵ペア生成</button>
+<br />
+
 <label for="pubkey">公開鍵</label>
 <input id="pubkey" name="pubkey"></input>
 <br />
@@ -13,7 +16,6 @@
 <input id="privkey" name="privkey"></input>
 <br />
 
-<button onclick="gen_keys()">鍵ペア生成</button>
 
 <script>
     const privKey = document.getElementById('privkey')
