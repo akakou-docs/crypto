@@ -14,4 +14,6 @@ permalink: /docs/2_cipher/
     src="../../img/cipher.pdf"
     type="application/pdf"
     frameBorder="0"
-    scrolling="auto" />
+    scrolling="auto"
+    height="100%"
+    width="100%" />
