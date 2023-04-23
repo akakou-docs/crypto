@@ -18,7 +18,7 @@
 
 
 <label for="output">出力：暗号文/平文</label>
-<input id="output" name="output"></input>
+<input id="output" name="output" readonly></input>
 
 <br />
 平文を入力すると暗号文が、<br />
@@ -28,7 +28,7 @@
   const comCipherKey = document.getElementById('key')
   const comCipherInput = document.getElementById('input')
   const comCipherOutput = document.getElementById('output')
-  
+
   const enc_com = () => {
     const result = CryptoJS.AES.encrypt(comCipherInput.value, comCipherKey.value).toString();
     comCipherOutput.value = result;
@@ -39,6 +39,3 @@
     comCipherOutput.value = result;
   }
 </script>
-
-
-
