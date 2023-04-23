@@ -1,7 +1,8 @@
 ---
 layout: page
-title: 暗号技術の概要
+title: 公開鍵暗号
 nav_order: 4
+parent: 暗号
 permalink: /docs/4_pubkey
 ---
 
