@@ -7,8 +7,15 @@ permalink: /docs/2_enc-dec/
 
 # 暗号とは？
 
-暗号とは、平文（伝えたい秘密）を第三者に漏れないように送信するための技術。  
-→ 第三者が通信文を見ても特別な知識なしでは、読めないように変換する
+暗号は、特定の人物に平文（秘密）するための技術
+→第三者が見ても、特別な知識なしでは読めないように変換する
 
 
-<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/61c874bd123f4c018d169bdf41d15d68?slide=3" title="犬でもわかる公開鍵暗号" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 314;" data-ratio="1.78343949044586"></iframe>
+
+<div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFg8JdR8Jg&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
