@@ -13,7 +13,6 @@ permalink: /docs/2_cipher/
 
 <iframe 
     src="../../img/cipher.pdf"
-    height="100%"
-    width="100%" 
+    style="width: 100%; height: 100vh"
     frameBorder="0"
     scrolling="auto" />
