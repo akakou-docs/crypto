@@ -78,3 +78,9 @@ ElGamal暗号
 
 [^mitukattenai]: 現実的な時間で計算できる計算方法が見つかっていない。
 [^risantaisu]: $g$ を $x$上して、 $p$ のあまりをとった数
+
+## 公開鍵暗号のデモ（RSA）
+
+### 1. 鍵ペアの生成
+
+<iframe src="../../demo/rsa_key_gen.html" height="500px" width="100%" scrolling="no" frameborder="0"></iframe>
