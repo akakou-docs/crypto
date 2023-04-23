@@ -16,8 +16,9 @@ permalink: /docs/1_crypto
 [^cryptology-iacr-1]: [Cryptology is the science and practice of designing computation and communication systems which are secure in the presence of adversaries.](https://www.iacr.org/) 
 [^cryptology-iacr-2]: 引用元では暗号技術（Cryptgraphic Technologies）ではなく、Cryptology（暗号学）について述べている。しかし筆者は暗号技術についても、暗号学に準じたものになると考えている。
 
-## 悪い事とは？
+## 脅威
 
+悪い人が行う「悪いこと」って何だろうか？  
 四大脅威と呼ばれるものがある。
 
 **脅威1. 盗聴：**
@@ -36,7 +37,7 @@ permalink: /docs/1_crypto
 悪い人は、自身の送信した内容について、あとから「送っていない」という。  
 例：悪い人は、Webサイト上で契約をして、あとから「契約してない」と嘘をつく。
 
-### 暗号技術が目指す目標
+## 目標
 
 上記の脅威から資産を守るため、
 暗号技術は以下の目標を設定する[^sec-req]。
