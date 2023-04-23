@@ -1,9 +1,9 @@
 ---
 layout: page
 title: 共通鍵暗号・公開鍵暗号
-parent: 暗号技術
-nav_order: 1
-permalink: /docs/
+<!-- parent: 暗号技術 -->
+nav_order: 2
+permalink: /docs/2_enc-dec/
 ---
 
 # 暗号とは？
