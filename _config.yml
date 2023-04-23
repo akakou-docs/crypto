@@ -1,6 +1,6 @@
 title: 犬でもわかる暗号技術入門
 description: 暗号とは何か犬でもわかるように説明します！
-remote_theme: just-the-docs/just-the-docs
+theme: just-the-docs
 
 url: https://akakou-docs.github.io/crypto
 
