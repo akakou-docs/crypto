@@ -1,4 +1,13 @@
 
+function str2ab(str) {
+    const buf = new ArrayBuffer(str.length);
+    const bufView = new Uint8Array(buf);
+    for (let i = 0, strLen = str.length; i < strLen; i++) {
+        bufView[i] = str.charCodeAt(i);
+    }
+    return buf;
+}
+
 const generateRSACipherKey = async () => {
     const keypairs = await window.crypto.subtle.generateKey(
         {
@@ -13,7 +22,6 @@ const generateRSACipherKey = async () => {
 
     return keypairs
 };
-
 const encodeKey = async (key, type) => {
     const rawKey = await window.crypto.subtle.exportKey(
         type,
@@ -28,5 +36,38 @@ const encodeKeyPair = async (keypair) => {
         pub: await encodeKey(keypair.publicKey, "spki"),
         priv: await encodeKey(keypair.privateKey, "pkcs8"),
     };
+}
+
+
+const decodeKey = async (encoded, type, usage) => {
+    const derString = window.atob(encoded);
+    const binKey = str2ab(derString);
+
+    return window.crypto.subtle.importKey(
+        type,
+        binKey,
+        {
+            name: "RSA-OAEP",
+            hash: "SHA-256",
+        },
+        true,
+        [usage]
+    );
+}
+
+const encrypt = async (message, pub) => {
+    const encoder = new TextEncoder();
+    const encodedMessage = encoder.encode(message);
+
+    const cipher = await window.crypto.subtle.encrypt(
+        {
+            name: "RSA-OAEP",
+        },
+        pub,
+        encodedMessage
+    );
+
+    const encodedCipher = btoa(String.fromCharCode(...new Uint8Array(cipher)));
+    return encodedCipher
 }
 
