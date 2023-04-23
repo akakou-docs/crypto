@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 共通鍵暗号・公開鍵暗号
+title: 暗号（共通鍵・公開鍵）
 nav_order: 2
 permalink: /docs/2_enc-dec/
 ---
