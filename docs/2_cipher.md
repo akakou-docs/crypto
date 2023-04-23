@@ -66,38 +66,4 @@ AESとは、現在最も利用される共通鍵暗号方式である。
 
 ##### AESのデモ
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-
-<label for="com-cipher-input">Input</label>
-<input id="com-cipher-input"></input>
-<br />
-
-<label for="com-cipher-key">Key</label>
-<input id="com-cipher-key" name="com-cipher-key"></input>
-<br />
-
-<button onclick="enc_com()">暗号化</button>
-<button onclick="dec_com()">復号</button>
-
-<br />
-
-<label for="com-cipher-output">Result</label>
-<input id="com-cipher-output" name="com-cipher-output"></input>
-
-<script>
-  const comCipherKey = document.getElementById('com-cipher-key')
-  const comCipherInput = document.getElementById('com-cipher-input')
-  const comCipherOutput = document.getElementById('com-cipher-output')
-  
-  const enc_com = () => {
-    const result = CryptoJS.AES.encrypt(comCipherInput.value, comCipherKey.value).toString();
-    comCipherOutput.value = result;
-  }
-
-  const dec_com = () => {
-    const result = CryptoJS.AES.decrypt(comCipherInput.value, comCipherKey.value).toString(CryptoJS.enc.Utf8);
-    comCipherOutput.value = result;
-  }
-</script>
-
-
+<iframe src="../../demo/aes.html" height="500px" width="100%" scrolling="no" frameborder="0"></iframe>
