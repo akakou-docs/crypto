@@ -12,7 +12,6 @@ permalink: /docs/2_cipher/
 
 <embed 
     src="../../img/cipher.pdf"
-    height="700"
     type="application/pdf"
     frameBorder="0"
     scrolling="auto" />
