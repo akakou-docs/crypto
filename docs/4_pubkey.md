@@ -55,11 +55,11 @@ permalink: /docs/4_pubkey
 復号に用いる鍵を**秘密鍵**と呼び、
 これらのペアを**鍵ペア**と呼ぶ。
 
-<img src="../../img/pubkey1.png" height="500px" />
+<img src="../img/pubkey1.png" height="500px" />
 
 実際のプロトコル
 
-<img src="../../img/pubkey2.png" />
+<img src="../img/pubkey2.png" />
 
 ## 公開鍵暗号の例
 
