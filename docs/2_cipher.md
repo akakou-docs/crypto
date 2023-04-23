@@ -88,12 +88,14 @@ AESとは、現在最も利用される共通鍵暗号方式である。
 
 ## 公開鍵暗号
 
-共通鍵暗号の課題を解決するため、公開鍵暗号が提案された。
+共通鍵暗号の課題を解決するため、公開鍵暗号が提案された。  
 公開鍵暗号とは、暗号化と復号で違う鍵を用いる暗号である。
 
-<iframe src="../../demo/pubkey1.html" height="500px" width="100%" scrolling="no" frameborder="0"></iframe>
+<img src="../../img/pubkey1.png" />
 
-<iframe src="../../demo/pubkey2.html" height="500px" width="100%" scrolling="no" frameborder="0"></iframe>
 
+### 実際のプロトコル
+
+<img src="../../img/pubkey2.png" />
 
 
