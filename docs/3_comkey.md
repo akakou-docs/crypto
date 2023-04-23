@@ -2,7 +2,6 @@
 layout: page
 title: 共通鍵暗号
 nav_order: 3
-parent: 暗号
 permalink: /docs/3_comkey/
 ---
 
