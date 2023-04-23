@@ -64,6 +64,6 @@ AESとは、現在最も利用される共通鍵暗号方式である。
 
 **とりあえず何か共通鍵暗号を利用したい場合は、AESを使うといい。**
 
-##### AESのデモ
+### 共通鍵暗号のデモ(AES)
 
 <iframe src="../../demo/aes.html" height="500px" width="100%" scrolling="no" frameborder="0"></iframe>
