@@ -22,6 +22,22 @@ const generateRSACipherKey = async () => {
 
     return keypairs
 };
+
+const generateRSACipherKeyForSignature = async () => {
+    const keypairs = await window.crypto.subtle.generateKey(
+        {
+            name: "RSASSA-PKCS1-v1_5",
+            modulusLength: 2048,
+            publicExponent: new Uint8Array([1, 0, 1]), // 24 bit representation of 65537
+            hash: "SHA-256"
+        },
+        true,
+        ["sign", "verify"]
+    );
+
+
+    return keypairs
+};
 const encodeKey = async (key, type) => {
     const rawKey = await window.crypto.subtle.exportKey(
         type,
@@ -54,6 +70,24 @@ const decodeKey = async (encoded, type, usage) => {
         [usage]
     );
 }
+
+
+const decodeKeyForSignature = async (encoded, type, usage) => {
+    const derString = window.atob(encoded);
+    const binKey = str2ab(derString);
+
+    return window.crypto.subtle.importKey(
+        type,
+        binKey,
+        {
+            name: "RSASSA-PKCS1-v1_5",
+            hash: "SHA-256",
+        },
+        true,
+        [usage]
+    );
+}
+
 
 const encrypt = async (message, pub) => {
     const encoder = new TextEncoder();
@@ -90,3 +124,22 @@ const decrypt = async (cipher, priv) => {
 
     return encodedPlain
 }
+
+
+const sign = async (message, priv) => {
+    const encoder = new TextEncoder();
+    const encodedMessage = encoder.encode(message);
+
+    const cipher = await window.crypto.subtle.sign(
+        {
+            name: "RSASSA-PKCS1-v1_5",
+        },
+        priv,
+        encodedMessage
+    );
+
+    const encodedCipher = btoa(String.fromCharCode(...new Uint8Array(cipher)));
+    return encodedCipher
+}
+
+
