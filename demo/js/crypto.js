@@ -106,25 +106,19 @@ const decrypt = async function (cipher, pubkey, scheme) {
 
 
 
-const sign = async (message, priv) => {
-    const encoder = new TextEncoder()
+const sign = async (message, privkey, scheme) => {
     const encodedMessage = encoder.encode(message)
 
-    const cipher = await window.crypto.subtle.sign(
-        {
-            name: "RSASSA-PKCS1-v1_5",
-        },
-        priv,
-        encodedMessage
-    )
+    const signature = await callfunc("sign", privkey, encodedMessage, scheme)
 
-    const encodedCipher = btoa(String.fromCharCode(...new Uint8Array(cipher)))
-    return encodedCipher
+    const encodedSignature = btoa(String.fromCharCode(...new Uint8Array(signature)))
+    return encodedSignature
 }
 
 
-const verify = async (signature, message, pubkey) => {
-    const encoder = new TextEncoder()
+const verify = async (signature, message, pubkey, scheme) => {
+    const importedPubkey = await importKey(pubkey, scheme)
+
     const encodedMessage = encoder.encode(message)
 
     const derSignature = window.atob(signature)
@@ -132,7 +126,7 @@ const verify = async (signature, message, pubkey) => {
 
     let result = await window.crypto.subtle.verify(
         "RSASSA-PKCS1-v1_5",
-        pubkey,
+        importedPubkey,
         binSignature,
         encodedMessage
     )
