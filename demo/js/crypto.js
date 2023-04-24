@@ -135,3 +135,25 @@ const verify = async (signature, message, pubkey, scheme) => {
 }
 
 
+async function test_sign() {
+    const scheme = new CryptoScheme("RSASSA-PKCS1-v1_5", ["sign", "verify"], null)
+    const signScheme = new CryptoScheme("RSASSA-PKCS1-v1_5", ["sign"], "pkcs8")
+    const verifyScheme = new CryptoScheme("RSASSA-PKCS1-v1_5", ["verify"], "spki")
+
+    const keypair = await generateKeyPair(scheme)
+    const signature = await sign('hoge', keypair.privkey, signScheme)
+    const result = await verify(signature, 'hoge', keypair.pubkey, verifyScheme)
+    console.log("result: ", result)
+}
+
+
+async function test_enc() {
+    const scheme = new CryptoScheme("RSA-OAEP", ["encrypt", "decrypt"], null)
+    const encryptScheme = new CryptoScheme("RSA-OAEP", ["encrypt"], "spki")
+    const verifyScheme = new CryptoScheme("RSA-OAEP", ["decrypt"], "pkcs8")
+
+    const keypair = await generateKeyPair(scheme)
+    const cipher = await encrypt('hoge', keypair.pubkey, encryptScheme)
+    const result = await decrypt(cipher, keypair.privkey, verifyScheme)
+    console.log("result: ", result == 'hoge')
+}
