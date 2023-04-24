@@ -37,12 +37,10 @@ AESとは、現在最も利用される共通鍵暗号方式である。
 <br />
 <br />
 
-
 <iframe src="../../demo/aes.html" height="500px" width="100%" scrolling="no" frameborder="0"></iframe>
 
+## 共通鍵暗号の特徴<iframe src="../../demo/aes.html" height="500px" width="100%" scrolling="no" frameborder="0"></iframe>
 
-
-## 共通鍵暗号の特徴
 ### メリット
 - 高速
 
@@ -52,3 +50,8 @@ AESとは、現在最も利用される共通鍵暗号方式である。
   - 共通鍵暗号は相手ごとに鍵を作成する必要がある  
     →n人が相互に暗号通信するのに、必要な共通鍵数はn(n-1)/2
 - 漏洩せずに共通鍵を配送することは難しい（**鍵配送問題**）
+  - そもそも共通鍵を安全に配送できるなら、平文も安全に配送できるはず
+
+<img src="../../img/key-scale.png" />
+
+
