@@ -13,7 +13,7 @@ permalink: /docs/1_crypto
 - 主に数学を用いて実現される。
 - 例：盗聴者（悪い人）がいる中でも、秘密が漏洩しない技術
 
-[^cryptology-iacr-1]: [Cryptology is the science and practice of designing computation and communication systems which are secure in the presence of adversaries.](https://www.iacr.org/) 
+[^cryptology-iacr-1]: ["Cryptology is the science and practice of designing computation and communication systems which are secure in the presence of adversaries."](https://www.iacr.org/) 
 [^cryptology-iacr-2]: 引用元では暗号技術（Cryptgraphic Technologies）ではなく、Cryptology（暗号学）について述べている。しかし筆者は暗号技術についても、暗号学に準じたものになると考えている。
 
 ## 脅威
@@ -66,17 +66,16 @@ permalink: /docs/1_crypto
 上記の目標を達成するために、
 以下の暗号技術がよく利用される。
 
-- `目標1. 機密性` を満たす技術
+- `目標1. 機密性` を目指す技術
   - 共通鍵暗号
   - 公開鍵暗号
 - `目標2. 完全性` を目指す技術`
   - ハッシュ関数
-  - MAC
   - ディジタル署名
-- `目標3. 真正性` を満たす技術
-  - MAC
+- `目標3. 真正性` を目指す技術
   - ディジタル署名
-- `目標4. 否認不可能` を満たす技術
+  - PKI
+- `目標4. 否認不可能` を目指す技術
   - ディジタル署名
 
 本サイトでは、上記の技術について、それぞれのべる。
