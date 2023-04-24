@@ -24,11 +24,9 @@
 <script>
     const scheme = new CryptoScheme("RSA-OAEP", ["encrypt"], "spki")
 
-    const cipher = document.getElementById('cipher')
-    const plain = document.getElementById('plain')
-    const pubkey = document.getElementById('pubkey')
-
     const run = async () => {
-        cipher.value = await encrypt(plain.value, pubkey.value, scheme)
+        tags.cipher.value = await encrypt(tags.plain.value, tags.pubkey.value, scheme)
     }
 </script>
+
+<script src="js/tags.js"></script>

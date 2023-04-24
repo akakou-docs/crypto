@@ -20,13 +20,11 @@
 <script>
     const scheme = new CryptoScheme("RSA-OAEP", ["encrypt", "decrypt"], null)
 
-    const privkey = document.getElementById('privkey')
-    const pubkey = document.getElementById('pubkey')
-
     const run = async () => {
         const keypair = await generateKeyPair(scheme)
 
-        privkey.value = keypair.privkey
-        pubkey.value = keypair.pubkey
+        tags.privkey.value = keypair.privkey
+        tags.pubkey.value = keypair.pubkey
     }
 </script>
+<script src="js/tags.js"></script>

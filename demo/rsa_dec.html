@@ -24,11 +24,9 @@
 <script>
     const scheme = new CryptoScheme("RSA-OAEP", ["decrypt"], "pkcs8")
 
-    const cipher = document.getElementById('cipher')
-    const plain = document.getElementById('plain')
-    const privkey = document.getElementById('privkey')
-
     const run = async () => {
-        plain.value = await decrypt(cipher.value, privkey.value, scheme)
+        tags.plain.value = await decrypt(tags.cipher.value, tags.privkey.value, scheme)
     }
 </script>
+
+<script src="js/tags.js"></script>
