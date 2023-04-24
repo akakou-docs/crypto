@@ -143,3 +143,21 @@ const sign = async (message, priv) => {
 }
 
 
+const verify = async (signature, message, pubkey) => {
+    const encoder = new TextEncoder();
+    const encodedMessage = encoder.encode(message);
+
+    const derSignature = window.atob(signature)
+    const binSignature = str2ab(derSignature)
+
+    let result = await window.crypto.subtle.verify(
+        "RSASSA-PKCS1-v1_5",
+        pubkey,
+        binSignature,
+        encodedMessage
+    );
+
+    return result
+}
+
+
