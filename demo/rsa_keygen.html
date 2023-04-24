@@ -2,10 +2,10 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-<script type="text/javascript" src="./js/crypto.js"></script>
+<script type="text/javascript" src="js/crypto.js"></script>
 
 
-<button onclick="gen_keys()">鍵ペア生成</button>
+<button onclick="run()">鍵ペア生成</button>
 <br />
 
 <label for="pubkey">公開鍵</label>
@@ -18,14 +18,15 @@
 
 
 <script>
-    const privKey = document.getElementById('privkey')
-    const pubKey = document.getElementById('pubkey')
+    const scheme = new CryptoScheme("RSA-OAEP", ["encrypt", "decrypt"], null)
 
-    const gen_keys = async () => {
-        const keypair = await generateRSACipherKey()
-        const exported = await encodeKeyPair(keypair)
+    const privkey = document.getElementById('privkey')
+    const pubkey = document.getElementById('pubkey')
 
-        privKey.value = exported.priv
-        pubKey.value = exported.pub
+    const run = async () => {
+        const keypair = await generateKeyPair(scheme)
+
+        privkey.value = keypair.privkey
+        pubkey.value = keypair.pubkey
     }
 </script>

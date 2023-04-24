@@ -13,7 +13,7 @@
 <input id="pubkey" name="pubkey"></input>
 <br />
 
-<button onclick="gen_keys()">暗号化</button>
+<button onclick="run()">暗号化</button>
 <br />
 
 <label for="cipher">暗号文</label>
@@ -22,13 +22,13 @@
 
 
 <script>
+    const scheme = new CryptoScheme("RSA-OAEP", ["encrypt"], "spki")
+
     const cipher = document.getElementById('cipher')
     const plain = document.getElementById('plain')
     const pubkey = document.getElementById('pubkey')
 
-    const gen_keys = async () => {
-        const rawPub = await decodeKey(pubkey.value, 'spki', "encrypt")
-        cipher.value = await encrypt(plain.value, rawPub)
-        console.log(rawPub)
+    const run = async () => {
+        cipher.value = await encrypt(plain.value, pubkey.value, scheme)
     }
 </script>

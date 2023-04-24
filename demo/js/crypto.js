@@ -1,134 +1,114 @@
+const encoder = new TextEncoder()
+const decoder = new TextDecoder()
 
-function str2ab(str) {
-    const buf = new ArrayBuffer(str.length);
-    const bufView = new Uint8Array(buf);
+
+const str2ab = (str) => {
+    const buf = new ArrayBuffer(str.length)
+    const bufView = new Uint8Array(buf)
     for (let i = 0, strLen = str.length; i < strLen; i++) {
-        bufView[i] = str.charCodeAt(i);
+        bufView[i] = str.charCodeAt(i)
     }
-    return buf;
+    return buf
 }
 
-const generateRSACipherKey = async () => {
-    const keypairs = await window.crypto.subtle.generateKey(
-        {
-            name: "RSA-OAEP",
-            modulusLength: 2048,
-            publicExponent: new Uint8Array([1, 0, 1]), // 24 bit representation of 65537
-            hash: "SHA-256"
-        },
-        true,
-        ["encrypt", "decrypt"]
-    );
 
-    return keypairs
-};
+class CryptoScheme {
+    constructor(algo, types, format) {
+        this.algo = algo
+        this.types = types
+        this.format = format
+    }
+}
 
-const generateRSACipherKeyForSignature = async () => {
-    const keypairs = await window.crypto.subtle.generateKey(
-        {
-            name: "RSASSA-PKCS1-v1_5",
-            modulusLength: 2048,
-            publicExponent: new Uint8Array([1, 0, 1]), // 24 bit representation of 65537
-            hash: "SHA-256"
-        },
-        true,
-        ["sign", "verify"]
-    );
+async function callfunc(funcname, key, message, scheme) {
+    const importedKey = await importKey(key, scheme)
+
+    const t = {
+        name: scheme.algo,
+    }
+
+    const result = await window.crypto.subtle[funcname](t, importedKey, message)
+    return result
+}
 
 
-    return keypairs
-};
-const encodeKey = async (key, type) => {
+const encodeKey = async (key, format) => {
+    console.log(key, format)
     const rawKey = await window.crypto.subtle.exportKey(
-        type,
+        format,
         key
-    );
-    const encoded = btoa(String.fromCharCode(...new Uint8Array(rawKey)));
+    )
+    const encoded = btoa(String.fromCharCode(...new Uint8Array(rawKey)))
     return encoded
 }
 
 const encodeKeyPair = async (keypair) => {
     return {
-        pub: await encodeKey(keypair.publicKey, "spki"),
-        priv: await encodeKey(keypair.privateKey, "pkcs8"),
-    };
+        pubkey: await encodeKey(keypair.publicKey, "spki"),
+        privkey: await encodeKey(keypair.privateKey, "pkcs8"),
+    }
 }
 
 
-const decodeKey = async (encoded, type, usage) => {
-    const derString = window.atob(encoded);
-    const binKey = str2ab(derString);
+
+const importKey = async (encoded, scheme) => {
+    const derString = window.atob(encoded)
+    const binKey = str2ab(derString)
 
     return window.crypto.subtle.importKey(
-        type,
+        scheme.format,
         binKey,
         {
-            name: "RSA-OAEP",
+            name: scheme.algo,
             hash: "SHA-256",
         },
         true,
-        [usage]
-    );
+        scheme.types
+    )
 }
 
 
-const decodeKeyForSignature = async (encoded, type, usage) => {
-    const derString = window.atob(encoded);
-    const binKey = str2ab(derString);
-
-    return window.crypto.subtle.importKey(
-        type,
-        binKey,
+const generateKeyPair = async (scheme) => {
+    const keypair = await window.crypto.subtle.generateKey(
         {
-            name: "RSASSA-PKCS1-v1_5",
-            hash: "SHA-256",
+            name: scheme.algo,
+            modulusLength: 2048,
+            publicExponent: new Uint8Array([1, 0, 1]), // 24 bit representation of 65537
+            hash: "SHA-256"
         },
         true,
-        [usage]
-    );
+        scheme.types
+    )
+
+    const encoded = encodeKeyPair(keypair)
+    return encoded
 }
 
 
-const encrypt = async (message, pub) => {
-    const encoder = new TextEncoder();
-    const encodedMessage = encoder.encode(message);
+const encrypt = async function (message, pubkey, scheme) {
+    const encodedMessage = encoder.encode(message)
 
-    const cipher = await window.crypto.subtle.encrypt(
-        {
-            name: "RSA-OAEP",
-        },
-        pub,
-        encodedMessage
-    );
-
-    const encodedCipher = btoa(String.fromCharCode(...new Uint8Array(cipher)));
+    const result = await callfunc("encrypt", pubkey, encodedMessage, scheme)
+    const encodedCipher = btoa(String.fromCharCode(...new Uint8Array(result)))
     return encodedCipher
 }
 
 
-
-const decrypt = async (cipher, priv) => {
+const decrypt = async function (cipher, pubkey, scheme) {
     const derString = window.atob(cipher)
-    const binCipher = str2ab(derString)
+    const rawCipher = str2ab(derString)
 
-    const plain = await window.crypto.subtle.decrypt(
-        {
-            name: "RSA-OAEP",
-        },
-        priv,
-        binCipher
-    )
+    const plain = await callfunc("decrypt", pubkey, rawCipher, scheme)
+    decodedPlain = decoder.decode(plain)
 
-    let decoder = new TextDecoder()
-    encodedPlain = decoder.decode(plain)
-
-    return encodedPlain
+    return decodedPlain
 }
 
 
+
 const sign = async (message, priv) => {
-    const encoder = new TextEncoder();
-    const encodedMessage = encoder.encode(message);
+    const encoder = new TextEncoder()
+    const encodedMessage = encoder.encode(message)
 
     const cipher = await window.crypto.subtle.sign(
         {
@@ -136,16 +116,16 @@ const sign = async (message, priv) => {
         },
         priv,
         encodedMessage
-    );
+    )
 
-    const encodedCipher = btoa(String.fromCharCode(...new Uint8Array(cipher)));
+    const encodedCipher = btoa(String.fromCharCode(...new Uint8Array(cipher)))
     return encodedCipher
 }
 
 
 const verify = async (signature, message, pubkey) => {
-    const encoder = new TextEncoder();
-    const encodedMessage = encoder.encode(message);
+    const encoder = new TextEncoder()
+    const encodedMessage = encoder.encode(message)
 
     const derSignature = window.atob(signature)
     const binSignature = str2ab(derSignature)
@@ -155,7 +135,7 @@ const verify = async (signature, message, pubkey) => {
         pubkey,
         binSignature,
         encodedMessage
-    );
+    )
 
     return result
 }

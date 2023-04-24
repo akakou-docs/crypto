@@ -14,7 +14,7 @@
 <input id="privkey" name="privkey"></input>
 <br />
 
-<button onclick="gen_keys()">復号</button>
+<button onclick="run()">復号</button>
 <br />
 
 <label for="plain">平文</label>
@@ -22,12 +22,13 @@
 
 
 <script>
+    const scheme = new CryptoScheme("RSA-OAEP", ["decrypt"], "pkcs8")
+
     const cipher = document.getElementById('cipher')
     const plain = document.getElementById('plain')
     const privkey = document.getElementById('privkey')
 
-    const gen_keys = async () => {
-        const rawPriv = await decodeKey(privkey.value, 'pkcs8', "decrypt")
-        plain.value = await decrypt(cipher.value, rawPriv)
+    const run = async () => {
+        plain.value = await decrypt(cipher.value, privkey.value, scheme)
     }
 </script>
