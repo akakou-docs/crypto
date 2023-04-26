@@ -12,11 +12,11 @@ permalink: /docs/6_signature/
 
 要はリアル世界で言う「はんこ」のような技術である。  
 
-<img src="../img/signature.png" height="500px" />
+<img src="../../img/signature.png" height="500px" />
 
 ディジタル署名方式では、秘密鍵から署名対象に対する署名を生成し、公開鍵を用いてその署名を検証する。
 
-<img src="../img/signature2.png" height="500px" />
+<img src="../../img/signature2.png" height="500px" />
 
 
 ## セキュリティ要件
