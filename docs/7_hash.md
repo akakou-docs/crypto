@@ -96,6 +96,6 @@ permalink: /docs/7_hash/
 
 - TODO
 
-### Sha256 のデモ
+## Sha256 のデモ
 
 <iframe src="../../demo/sha.html" height="350px" width="100%" scrolling="no" frameborder="0"></iframe>
