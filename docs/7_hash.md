@@ -80,7 +80,7 @@ permalink: /docs/7_hash/
 ダウンロードしたファイルのハッシュ値と、ダウンロード元が公開するハッシュ値を比較して、ファイルが壊れていないか確認できる。  
 大きなファイル（例：OSのイメージ）のダウンロード時に有効である。
 
-<img src="../../../img/hash2.png" height="500px" />
+<img src="../../img/hash2.png" height="500px" />
 
 ### 署名対象の要約
 
@@ -98,4 +98,4 @@ permalink: /docs/7_hash/
 
 ### Sha256 のデモ
 
-<iframe src="../demo/sha.html" height="350px" width="100%" scrolling="no" frameborder="0"></iframe>
+<iframe src="../../demo/sha.html" height="350px" width="100%" scrolling="no" frameborder="0"></iframe>
