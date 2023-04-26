@@ -16,6 +16,9 @@ PKIでは、CA（Certifiacte Authority）と呼ばれる信頼できる第三者
 <img src="../../img/ca1.png" height="500px" />
 
 ディジタル証明書は、「公開鍵とその持ち主の情報」に対するCAの署名を含み、これらの関係を証明する。
+  - 署名 = Sign(送信者の公開鍵 || 送信者の情報, CAの秘密鍵)
+
+<img src="../../img/ca2.png" height="500px" />
 
 
 つまりPKIによって、一つCAの公開鍵を持っていれば、複数の公開鍵を信用できるのである。  
