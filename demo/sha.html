@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+
+<label for="input">元の文章</label>
+<input id="input" name="input"></input>
+<br />
+
+<button onclick="run()">ハッシュ化</button>
+
+<br />
+
+<label for="output">ハッシュ値</label>
+<input id="output" name="output" readonly></input>
+
+<br />
+
+<script>
+  const hashInput = document.getElementById('input')
+  const hashOutput = document.getElementById('output')
+
+  const run = () => {
+    var result = CryptoJS.SHA256(hashInput.value);
+    hashOutput.value = result;
+  }
+
+</script>
