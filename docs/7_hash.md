@@ -95,3 +95,7 @@ permalink: /docs/7_hash/
 ### ブロックチェーンのマイニング
 
 - TODO
+
+### Sha256 のデモ
+
+<iframe src="../demo/sha.html" height="350px" width="100%" scrolling="no" frameborder="0"></iframe>
