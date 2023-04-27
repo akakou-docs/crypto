@@ -74,7 +74,7 @@ ElGamal暗号
   - 離散対数問題： $y, g, p$ から $x$ を現実的な時間で計算できない[^mitukattenai]。
     - $p$:  大きな素数
     - $g, p, x$: $p$ 未満の数
-    - $y = g^x \mod p$ [^risantaisu]
+    - $y = g^x \mod p$, [^risantaisu]
 
 [^mitukattenai]: 現実的な時間で計算できる計算方法が見つかっていない。
 [^risantaisu]: $g$ を $x$上して、 $p$ のあまりをとった数
