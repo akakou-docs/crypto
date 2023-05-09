@@ -34,4 +34,4 @@ permalink: /docs/5_hybrid
 
 
 
-<img src="../img/hybrid.png" height="500px" />
+<img src="../img/hybrid.png" height="800px" />
