@@ -60,6 +60,8 @@ RSA署名では、RSA暗号を応用することで、ディジタル署名を�
 署名検証
 : 署名の公開鍵（RSA暗号の秘密鍵）で暗号を復号し、平文が署名対象か確認すること
 
+<img src="../../img/rsa_signature.png" height="800px" />
+
 
 
 {: .warning }
