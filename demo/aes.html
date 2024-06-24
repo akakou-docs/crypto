@@ -1,28 +1,32 @@
 <meta charset="UTF-8">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<link rel="stylesheet" href="https://unpkg.com/mvp.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
-<label for="input">入力：平文/暗号文</label>
-<input id="input"></input>
-<br />
+<main>
 
-<label for="key">共通鍵</label>
-<input id="key" name="key"></input>
-<br />
+  <label for="input">入力：平文/暗号文</label>
+  <input id="input"></input>
+  <br />
 
-<button onclick="enc_com()">暗号化</button>
-<button onclick="dec_com()">復号</button>
+  <label for="key">共通鍵</label>
+  <input id="key" name="key"></input>
+  <br />
 
-<br />
+  <button onclick="enc_com()">暗号化</button>
+  <button onclick="dec_com()">復号</button>
+
+  <br />
 
 
-<label for="output">出力：暗号文/平文</label>
-<input id="output" name="output" readonly></input>
+  <label for="output">出力：暗号文/平文</label>
+  <input id="output" name="output" readonly></input>
 
-<br />
-平文を入力すると暗号文が、<br />
-暗号文を入力すると平文が出力されます。
+  <br />
+  平文を入力すると暗号文が、<br />
+  暗号文を入力すると平文が出力されます。
+
+</main>
 
 <script>
   const comCipherKey = document.getElementById('key')

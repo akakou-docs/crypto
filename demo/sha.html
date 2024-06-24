@@ -1,21 +1,22 @@
 <meta charset="UTF-8">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<link rel="stylesheet" href="https://unpkg.com/mvp.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
+<main>
+  <label for="input">元の文章</label>
+  <input id="input" name="input"></input>
+  <br />
 
-<label for="input">元の文章</label>
-<input id="input" name="input"></input>
-<br />
+  <button onclick="run()">ハッシュ化</button>
 
-<button onclick="run()">ハッシュ化</button>
+  <br />
 
-<br />
+  <label for="output">ハッシュ値</label>
+  <input id="output" name="output" readonly></input>
 
-<label for="output">ハッシュ値</label>
-<input id="output" name="output" readonly></input>
-
-<br />
+  <br />
+</main>
 
 <script>
   const hashInput = document.getElementById('input')

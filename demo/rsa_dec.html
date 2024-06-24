@@ -1,24 +1,26 @@
 <meta charset="UTF-8">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<link rel="stylesheet" href="https://unpkg.com/mvp.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 <script type="text/javascript" src="./js/crypto.js"></script>
 
 
-<label for="cipher">暗号文</label>
-<input id="cipher" name="cipher"></input>
+<main>
+    <label for="cipher">暗号文</label>
+    <input id="cipher" name="cipher"></input>
 
-<br />
+    <br />
 
-<label for="privkey">秘密鍵</label>
-<input id="privkey" name="privkey"></input>
-<br />
+    <label for="privkey">秘密鍵</label>
+    <input id="privkey" name="privkey"></input>
+    <br />
 
-<button onclick="run()">復号</button>
-<br />
+    <button onclick="run()">復号</button>
+    <br />
 
-<label for="plain">平文</label>
-<input id="plain" name="plain" readonly></input>
+    <label for="plain">平文</label>
+    <input id="plain" name="plain" readonly></input>
+</main>
 
 
 <script>
