@@ -96,7 +96,7 @@ permalink: /docs/7_hash/
 
 {: .warning }
 
-> 単純にパスワードをハッシュ化しただけだと強度が不十分なので、パスワードの保存のためにはソルトやストレッチングを行うべきである。
+> 単純にパスワードをハッシュ化しただけだと強度が不十分なので、パスワードの保存のためには追加の処理[^additional]を行うべきである。
 
 ### ブロックチェーンのマイニング
 
@@ -105,3 +105,5 @@ permalink: /docs/7_hash/
 ## Sha256 のデモ
 
 <iframe src="../../demo/sha.html" height="350px" width="100%" scrolling="no" frameborder="0"></iframe>
+
+[^additional]: ソルト、ストレッチングと呼ばれる
