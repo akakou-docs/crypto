@@ -1,28 +1,31 @@
 <meta charset="UTF-8">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<link rel="stylesheet" href="https://unpkg.com/mvp.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 <script type="text/javascript" src="./js/crypto.js"></script>
 
-<label for="plain">署名対象</label>
-<input id="plain" name="plain"></input>
+<main>
+    <label for="plain">署名対象</label>
+    <input id="plain" name="plain"></input>
 
-<br />
+    <br />
 
-<label for="signature">署名</label>
-<input id="signature" name="signature"></input>
+    <label for="signature">署名</label>
+    <input id="signature" name="signature"></input>
 
-<br />
+    <br />
 
-<label for="pubkey">公開鍵</label>
-<input id="pubkey" name="pubkey"></input>
-<br />
+    <label for="pubkey">公開鍵</label>
+    <input id="pubkey" name="pubkey"></input>
+    <br />
 
-<button onclick="run()">検証</button>
-<br />
+    <button onclick="run()">検証</button>
+    <br />
 
-<label for="result">検証結果</label>
-<input id="result" name="target" readonly></input>
+    <label for="result">検証結果</label>
+    <input id="result" name="target" readonly></input>
+</main>
+
 
 
 <script>
